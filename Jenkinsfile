@@ -44,7 +44,12 @@ pipeline{
                   sh 'mvn package'
               }
           }
-	     
+	     post {
+               success {
+                  jacoco()
+               }
+       }
+       } 
           
       }
 }
